@@ -2,5 +2,5 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 fn main() {
-    nonebot_desktop_lib::run()
+    nonedesktop_lib::run()
 }
