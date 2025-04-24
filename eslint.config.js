@@ -5,7 +5,7 @@ import { includeIgnoreFile } from '@eslint/compat'
 import eslint from '@eslint/js'
 import stylistic from '@stylistic/eslint-plugin'
 import unocss from '@unocss/eslint-config/flat'
-import vueMacros from '@vue-macros/eslint-config/flat'
+import vueMacros from '@vue-macros/eslint-config'
 import eslintPluginImportX from 'eslint-plugin-import-x'
 import eslintPluginUnicorn from 'eslint-plugin-unicorn'
 import eslintPluginVue from 'eslint-plugin-vue'
@@ -20,10 +20,10 @@ export default tseslint.config(
   eslint.configs.recommended,
   tseslint.configs.recommended,
   tseslint.configs.stylistic,
-  eslintPluginUnicorn.configs['flat/recommended'],
+  eslintPluginUnicorn.configs.recommended,
   eslintPluginImportX.flatConfigs.recommended,
   eslintPluginImportX.flatConfigs.typescript,
-  stylistic.configs['recommended-flat'],
+  stylistic.configs.recommended,
   ...eslintPluginVue.configs['flat/recommended'],
   unocss,
   vueMacros,

@@ -32,6 +32,9 @@ export default defineConfig({
           dts: 'src/typed-router.d.ts',
         }),
       },
+      shortVmodel: {
+        prefix: '::',
+      },
       betterDefine: false,
     }),
     MetaLayouts(),
@@ -39,12 +42,24 @@ export default defineConfig({
       imports: [
         'vue',
         '@vueuse/core',
+        'pinia',
         VueRouterAutoImports,
         {
           '@tauri-apps/plugin-log': [['*', 'logger']],
+          'notivue': [['push', 'notify']],
         },
       ],
-      dirs: ['src/composables', 'src/database', 'src/stores', 'src/utils'],
+      dirs: [
+        'src/commands',
+        'src/composables',
+        'src/database',
+        'src/stores',
+        'src/utils',
+        {
+          glob: 'src/types',
+          types: true,
+        },
+      ],
       dts: 'src/auto-imports.d.ts',
       vueTemplate: true,
     }),

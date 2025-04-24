@@ -5,10 +5,8 @@ import 'dayjs/locale/zh-cn'
 
 dayjsLocale('zh-cn')
 
-document.addEventListener('contextmenu', (e) => {
-  if (import.meta.env.PROD) {
-    e.preventDefault()
-  }
+onBeforeMount(async () => {
+  await logger.attachConsole()
 })
 </script>
 

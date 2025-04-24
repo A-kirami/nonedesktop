@@ -1,6 +1,6 @@
+import { presetWind } from '@unocss/preset-wind3'
 import {
   defineConfig,
-  presetUno,
   presetAttributify,
   presetIcons,
   presetTypography,
@@ -13,14 +13,23 @@ import { presetShadcn } from 'unocss-preset-shadcn'
 
 export default defineConfig({
   presets: [
-    presetUno(),
+    presetWind(),
     presetAttributify(),
-    presetIcons(),
+    presetIcons({
+      scale: 1.2,
+      extraProperties: {
+        'display': 'inline-block',
+        'vertical-align': 'middle',
+      },
+    }),
     presetTypography(),
     presetScrollbar(),
     presetAnimations(),
     presetShadcn({
-      color: 'red',
+      color: {
+        base: 'red',
+        light: { primary: '0 78% 62%', ring: '0 78% 62%' },
+      },
     }),
   ],
   transformers: [transformerDirectives(), transformerVariantGroup()],
@@ -35,6 +44,17 @@ export default defineConfig({
   theme: {
     colors: {
       nb: {
+        50: '#fef2f2',
+        100: '#fde3e3',
+        200: '#fccccc',
+        300: '#f9a8a8',
+        400: '#f37676',
+        500: '#ea5252',
+        600: '#d62c2c',
+        700: '#b42121',
+        800: '#951f1f',
+        900: '#7c2020',
+        950: '#430c0c',
         primary: '#ea5252',
       },
     },
